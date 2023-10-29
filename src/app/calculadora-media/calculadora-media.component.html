@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="formCalculadora" (ngSubmit)="onCalcula()">
+
+      <div class="mb-3">
+        <label class="label-control">AC1</label>
+        <input type="text" formControlName="grade_ac1" class="form-control"/>
+      </div>
+
+      <div class="mb-3">
+        <label class="label-control">AC2</label>
+        <input type="text" formControlName="grade_ac2" class="form-control"/>
+      </div>
+
+      <div class="mb-3">
+        <label class="label-control">AG</label>
+        <input type="text" formControlName="grade_ag" class="form-control"/>
+      </div>
+
+      <div class="mb-3">
+        <label class="label-control">AF</label>
+        <input type="text" formControlName="grade_af" class="form-control"/>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="width: 100%;"><i class="bi bi-calculator"></i>Calcular</button>
+      
+      <div class="mb-3">
+        <label class="label-control">Media</label>
+        <input type="text" formControlName="grade_final_media" class="form-control"/>
+      </div>
+      
+    </form>
+  </div>
+</div>
