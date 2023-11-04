@@ -1,3 +1,9 @@
+# Instalação 
+1. Para efetuar o download realize `git clone https://github.com/flima21/AngularProject.git`
+2. Execute o comando `npm install`
+
+# Exercícios
+
 1. Calcular Média
   Crie uma componente que receberá as notas: AC1, AC2, AG e AF.
   Calcule a média ao clicar no botão “Calcular” e mostre se está aprovado ou reprovado, a média é 5.
