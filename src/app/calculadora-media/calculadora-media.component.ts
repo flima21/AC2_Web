@@ -9,14 +9,14 @@ import { FormControl } from '@angular/forms';
 })
 export class CalculadoraMediaComponent {
   	
-    formCalculadora : FormGroup;
+  formCalculadoraMedia : FormGroup;
     media : number;
 
     constructor() {
       this.media = 0;
 
       // Initialize the value formgroup
-      this.formCalculadora = new FormGroup({
+      this.formCalculadoraMedia = new FormGroup({
         grade_ac1: new FormControl(0,[Validators.required,Validators.min(0)]),
         grade_ac2: new FormControl(0,[Validators.required,Validators.min(0)]),
         grade_af: new FormControl(0,[Validators.required,Validators.min(0)]),
@@ -26,11 +26,11 @@ export class CalculadoraMediaComponent {
     }
 
     onCalcula() {
-      if(this.formCalculadora.valid) {
-        let obj_ac1 = this.formCalculadora.get('grade_ac1');
-        let obj_ac2 = this.formCalculadora.get('grade_ac2');
-        let obj_ag = this.formCalculadora.get('grade_ag');
-        let obj_af = this.formCalculadora.get('grade_af');
+      if(this.formCalculadoraMedia.valid) {
+        let obj_ac1 = this.formCalculadoraMedia.get('grade_ac1');
+        let obj_ac2 = this.formCalculadoraMedia.get('grade_ac2');
+        let obj_ag = this.formCalculadoraMedia.get('grade_ag');
+        let obj_af = this.formCalculadoraMedia.get('grade_af');
 
         let value_ac1 = 0;
         let value_ac2 = 0;
@@ -44,7 +44,7 @@ export class CalculadoraMediaComponent {
 
         // Média Final = (AC1 * 0,15) + (AC2 *0,30) + (AG * 0,10) + (AF * 0,45)
         this.media = ((value_ac1 * 0.15) + (value_ac2 * 0.3) + (value_ag * 0.1) + (value_af * 0.45));
-        this.formCalculadora.patchValue({'grade_final_media':this.media}); // Atribui o valor
+        this.formCalculadoraMedia.patchValue({'grade_final_media':this.media}); // Atribui o valor
       }
     }
 }

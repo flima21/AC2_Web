@@ -1,0 +1,29 @@
+<div class="container">
+  <form [formGroup]="formCalculadora" (ngSubmit)="onCalcula()">
+    
+    <div class="mb-3">
+      <label>Número 1</label>
+        <input type="text" placeholder="Digite um número" formControlName="value_1" class="form-control">
+    </div> 
+  
+    <div class="mb-3">
+      <label>Número 2</label>
+        <input type="text" placeholder="Digite um número" formControlName="value_2" class="form-control">
+    </div> 
+  
+    <div class="mb-3">
+      <label>Operador</label>
+      <select formControlName="operator" class="form-control">
+        <option value="" disabled>Escolha um operador</option>
+        <option *ngFor="let operations of symbolsOperator" [value]="operations.symbol">{{operations.name}}</option>
+      </select>
+    </div> 
+    
+    <div class="mb-3">
+      <label>Resultado</label>
+        <input type="text" formControlName="result" class="form-control">
+    </div> 
+  
+    <button class="btn btn-primary" type="submit" style="width: 100%;"><i class="bi bi-calculator"></i> Calcular</button>
+  </form>
+</div>
